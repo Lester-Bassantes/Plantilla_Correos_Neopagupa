@@ -71,12 +71,20 @@
             padding: 20px;
         }
 
+        .document-info {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-top: 2px solid #ccc;
+            padding-top: 10px;
+        }
+
         .footer-top {
             display: flex;
             flex-direction: column;
-            /* Alinea verticalmente los elementos */
             border-bottom: 2px solid #ccc;
-            /* Separador */
             padding-bottom: 20px;
             margin-bottom: 20px;
             border-top: 2px solid #ccc;
@@ -88,6 +96,15 @@
         .correo {
             font-size: 0.9rem;
             margin: 5px 0;
+            color: #555555;
+        }
+
+        .document-date,
+        .document-number,
+        .document-type {
+            font-size: 0.9rem;
+            margin: 5px 0;
+            color: #555555;
         }
 
         .footer-bottom {
@@ -96,18 +113,21 @@
             align-items: center;
             padding-top: 10px;
             border-top: 2px solid #ccc;
-            /* Barra distintiva */
+        }
+
+        .fa-solid {
+            color: #0f428f;
+            margin-right: 10px;
         }
 
         .redes-sociales i {
-            color: #555;
+            color: #555555;
             margin-right: 15px;
             font-size: 1.5rem;
         }
 
         .redes-sociales i:hover {
             color: #f1c40f;
-            /* Cambia a un amarillo en hover */
         }
 
         .pagina-web img {
@@ -118,9 +138,20 @@
 
         .pagina-web img:hover {
             transform: scale(1.05);
-            /* Aumenta ligeramente el tamaño al pasar el ratón */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* Sombra más intensa al pasar el ratón */
+        }
+
+        .section-title p {
+            text-align: left;
+            font-family: Comic Sans MS;
+            font-weight: bold;
+            font-size: 30px;
+            color: #EBD758;
+            text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68,
+                6px 6px #414D68,
+                7px 7px #414D68,
+                8px 8px #414D68,
+                9px 9px #414D68;
         }
     </style>
 </head>
@@ -130,14 +161,31 @@
         <div class="header">
             <img src="img/LOGO-2.png" alt="logo">
         </div>
+
         <div class="content">
             <h1><strong>{{ empresa_nombre }}</strong><br>Sistema de facturación electrónica</h1>
             <div class="divider"></div>
             <p class="atention">!!!ATENCIÓN ESTE DOCUMENTO TIENE VALIDEZ TRIBUTARIA!!!</p>
             <p class="message">Con la finalidad de brindar un mejor servicio, adjunto encontrará la Factura Electrónica.
             </p>
+
+            <!-- Información del documento -->
+            <div class="section-title">
+                <p>Información de documento</p>
+            </div>
+            <div class="document-info">
+                <p class="document-date"><i class="fa-solid fa-calendar-days"></i>Fecha de emisión: {{ fecha_emision }}
+                </p>
+                <p class="document-number"><i class="fa-solid fa-hashtag"></i>Número de documento: {{ numero_documento
+                    }}</p>
+                <p class="document-type"><i class="fa-solid fa-file"></i>Tipo de documento: {{ tipo_documento }}</p>
+            </div>
         </div>
+
         <footer>
+            <div class="section-title">
+                <p>PagupaSoft</p>
+            </div>
             <div class="footer-top">
                 <p class="direccion"><i class="fa-solid fa-location-dot"></i> Dirección: Ricardo Sotomayor y Dalila
                     Echevería</p>
@@ -152,7 +200,8 @@
                     <i class="fa-brands fa-youtube"></i>
                 </div>
                 <div class="pagina-web">
-                    <a href="https://www.empresa.com" target="_blank"><img src="img/logo_icon.png" alt="PagupaSoft"></a>
+                    <a href="http://www.pagupasoft.com" target="_blank"><img src="img/logo_icon.png"
+                            alt="PagupaSoft"></a>
                 </div>
             </div>
         </footer>
