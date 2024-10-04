@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoPagupa</title>
+
+    <!-- Styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f4f2f2;
+            border: 1px solid #4c8aa7;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: rgb(15, 66, 143);
+            background: linear-gradient(90deg, rgba(15, 66, 143, 1) 25%, rgba(247, 194, 56, 1) 95%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+        }
+
+        .header img {
+            height: 75px;
+            width: auto;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .content h1 {
+            color: #333333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .atention {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .message {
+            text-align: justify;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #fb8500;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #f4f2f2;
+            padding: 20px;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-direction: column;
+            /* Alinea verticalmente los elementos */
+            border-bottom: 2px solid #ccc;
+            /* Separador */
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-top: 2px solid #ccc;
+            padding-top: 10px;
+        }
+
+        .direccion,
+        .telefono,
+        .correo {
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            border-top: 2px solid #ccc;
+            /* Barra distintiva */
+        }
+
+        .redes-sociales i {
+            color: #555;
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .redes-sociales i:hover {
+            color: #f1c40f;
+            /* Cambia a un amarillo en hover */
+        }
+
+        .pagina-web img {
+            height: 50px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .pagina-web img:hover {
+            transform: scale(1.05);
+            /* Aumenta ligeramente el tamaño al pasar el ratón */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* Sombra más intensa al pasar el ratón */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="img/LOGO-2.png" alt="logo">
+        </div>
+        <div class="content">
+            <h1><strong>{{ empresa_nombre }}</strong><br>Sistema de facturación electrónica</h1>
+            <div class="divider"></div>
+            <p class="atention">!!!ATENCIÓN ESTE DOCUMENTO TIENE VALIDEZ TRIBUTARIA!!!</p>
+            <p class="message">Con la finalidad de brindar un mejor servicio, adjunto encontrará la Factura Electrónica.
+            </p>
+        </div>
+        <footer>
+            <div class="footer-top">
+                <p class="direccion"><i class="fa-solid fa-location-dot"></i> Dirección: Ricardo Sotomayor y Dalila
+                    Echevería</p>
+                <p class="telefono"><i class="fa-solid fa-phone"></i> Teléfono: (123) 456-7890</p>
+                <p class="correo"><i class="fa-solid fa-envelope"></i> Correo: gerente@empresa.com</p>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="redes-sociales">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="pagina-web">
+                    <a href="https://www.empresa.com" target="_blank"><img src="img/logo_icon.png" alt="PagupaSoft"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Add icons -->
+    <script src="https://kit.fontawesome.com/8852d90c63.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
