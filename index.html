@@ -6,37 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoPagupa</title>
 
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
     <!-- Styles -->
     <style>
         body {
             background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
         }
 
         .container {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto;
             background-color: #f4f2f2;
             border: 1px solid #4c8aa7;
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .header {
-            background: rgb(15, 66, 143);
             background: linear-gradient(90deg, rgba(15, 66, 143, 1) 25%, rgba(247, 194, 56, 1) 95%);
             color: white;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 5px;
+            padding: 15px;
+            justify-content: left;
         }
 
         .header img {
             height: 75px;
-            width: auto;
         }
 
         .content {
@@ -44,20 +49,23 @@
         }
 
         .content h1 {
-            color: #333333;
+            color: #333;
             margin-bottom: 20px;
             text-align: center;
+            font-size: 1.5rem;
         }
 
-        .atention {
+        .alert {
             text-align: center;
             font-weight: bold;
+            color: #d9534f;
         }
 
         .message {
+            color: #666;
+            line-height: 1.6;
             text-align: justify;
-            color: #666666;
-            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .divider {
@@ -66,45 +74,30 @@
             margin: 20px 0;
         }
 
+        .document-info,
+        .contact-info {
+            border-top: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
+            padding: 15px 0;
+            margin: 20px 0;
+        }
+
+        .document-info p,
+        .contact-info p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .document-info p i,
+        .contact-info p i {
+            color: #0f428f;
+            margin-right: 10px;
+        }
+
         footer {
             background-color: #f4f2f2;
             padding: 20px;
-        }
-
-        .document-info {
-            display: flex;
-            flex-direction: column;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-            border-top: 2px solid #ccc;
-            padding-top: 10px;
-        }
-
-        .footer-top {
-            display: flex;
-            flex-direction: column;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-            border-top: 2px solid #ccc;
-            padding-top: 10px;
-        }
-
-        .direccion,
-        .telefono,
-        .correo {
-            font-size: 0.9rem;
-            margin: 5px 0;
-            color: #555555;
-        }
-
-        .document-date,
-        .document-number,
-        .document-type {
-            font-size: 0.9rem;
-            margin: 5px 0;
-            color: #555555;
         }
 
         .footer-bottom {
@@ -115,91 +108,79 @@
             border-top: 2px solid #ccc;
         }
 
-        .fa-solid {
-            color: #0f428f;
-            margin-right: 10px;
-        }
-
-        .redes-sociales i {
-            color: #555555;
+        .social-links i {
+            color: #555;
             margin-right: 15px;
             font-size: 1.5rem;
         }
 
-        .redes-sociales i:hover {
-            color: #f1c40f;
+        .social-links i:hover {
+            color: #0f428f;
         }
 
-        .pagina-web img {
+        .website-logo img {
             height: 50px;
             width: auto;
             border-radius: 50%;
         }
 
-        .pagina-web img:hover {
+        .website-logo img:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .section-title p {
+        .section-title {
             text-align: left;
-            font-family: Comic Sans MS;
             font-weight: bold;
-            font-size: 30px;
-            color: #EBD758;
-            text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68,
-                6px 6px #414D68,
-                7px 7px #414D68,
-                8px 8px #414D68,
-                9px 9px #414D68;
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="header">
-            <img src="img/LOGO-2.png" alt="logo">
-        </div>
+        <header class="header">
+            <img src="img/LOGO-2.png" alt="NeoPagupa Logo">
+        </header>
 
-        <div class="content">
-            <h1><strong>{{ empresa_nombre }}</strong><br>Sistema de facturación electrónica</h1>
+        <section class="content">
+            <h1>{{ empresa_nombre }}<br>Sistema de Facturación Electrónica</h1>
             <div class="divider"></div>
-            <p class="atention">!!!ATENCIÓN ESTE DOCUMENTO TIENE VALIDEZ TRIBUTARIA!!!</p>
-            <p class="message">Con la finalidad de brindar un mejor servicio, adjunto encontrará la Factura Electrónica.
-            </p>
+            <p class="alert">¡IMPORTANTE: DOCUMENTO CON VALIDEZ TRIBUTARIA!</p>
+            <p class="message">Estimado cliente,</p>
+            <p class="message">Con el propósito de ofrecerle un servicio de calidad, le adjuntamos su Factura
+                Electrónica. A continuación, se detalla la información correspondiente:</p>
 
             <!-- Información del documento -->
-            <div class="section-title">
-                <p>Información de documento</p>
-            </div>
+            <div class="section-title">Información del documento</div>
             <div class="document-info">
-                <p class="document-date"><i class="fa-solid fa-calendar-days"></i>Fecha de emisión: {{ fecha_emision }}
-                </p>
-                <p class="document-number"><i class="fa-solid fa-hashtag"></i>Número de documento: {{ numero_documento
-                    }}</p>
-                <p class="document-type"><i class="fa-solid fa-file"></i>Tipo de documento: {{ tipo_documento }}</p>
+                <p><i class="fa-solid fa-calendar-days"></i><strong>Fecha de emisión:</strong> {{ fecha_emision }}</p>
+                <p><i class="fa-solid fa-hashtag"></i><strong>Número de documento:</strong> {{ numero_documento }}</p>
+                <p><i class="fa-solid fa-file"></i><strong>Tipo de documento:</strong> {{ tipo_documento }}</p>
             </div>
-        </div>
+        </section>
 
         <footer>
-            <div class="section-title">
-                <p>PagupaSoft</p>
-            </div>
-            <div class="footer-top">
-                <p class="direccion"><i class="fa-solid fa-location-dot"></i> Dirección: Ricardo Sotomayor y Dalila
-                    Echevería</p>
-                <p class="telefono"><i class="fa-solid fa-phone"></i> Teléfono: (123) 456-7890</p>
-                <p class="correo"><i class="fa-solid fa-envelope"></i> Correo: gerente@empresa.com</p>
+            <div class="section-title">PagupaSoft</div>
+            <div class="contact-info">
+                <p><i class="fa-solid fa-location-dot"></i><strong>Dirección:</strong> Ricardo Sotomayor y Dalila
+                    Echeverría</p>
+                <p><i class="fa-solid fa-phone"></i><strong>Teléfono:</strong> (123) 456-7890</p>
+                <p><i class="fa-solid fa-envelope"></i><strong>Correo:</strong> gerente@empresa.com</p>
             </div>
 
             <div class="footer-bottom">
-                <div class="redes-sociales">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-youtube"></i>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/pagupasoft/?locale=es_LA" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/pagupasoft/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="http://www.youtube.com/@pagupasoft2307" target="_blank"><i
+                            class="fa-brands fa-youtube"></i></a>
                 </div>
-                <div class="pagina-web">
+                <div class="website-logo">
                     <a href="http://www.pagupasoft.com" target="_blank"><img src="img/logo_icon.png"
                             alt="PagupaSoft"></a>
                 </div>
@@ -207,7 +188,7 @@
         </footer>
     </div>
 
-    <!-- Add icons -->
+    <!-- FontAwesome for icons -->
     <script src="https://kit.fontawesome.com/8852d90c63.js" crossorigin="anonymous"></script>
 </body>
 
